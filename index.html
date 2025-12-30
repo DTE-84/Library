@@ -8,7 +8,7 @@
   <title>Library</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/66240d21b2.js" crossorigin="anonymous"></script>
-  <script src="index.js"></script>
+  <script src="books.js"></script>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <img class="logo" src="assets/Library.svg" alt="">
         <ul class="nav__links">
           <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="#" class="nav__link">Contact</a></li>
+          <li><a href="javascript:void(0)" id="contact-link" class="nav__link">Contact</a></li>
           <li><a href="books.html" class="nav__link nav__link--primary">Books</a></li>
         </ul>
         <button class="btn__menu" onclick="openMenu()">
@@ -30,13 +30,13 @@
           </button>
           <ul class="menu__links">
             <li class="menu__list">
-              <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+              <a href="index.html" class="menu__link" onclick="closeMenu()">Home</a>
             </li>
             <li class="menu__list">
-              <a href="#features" class="menu__link" onclick="closeMenu()">Books</a>
+              <a href="books.html" class="menu__link" onclick="closeMenu()">Books</a>
             </li>
             <li class="menu__list">
-              <a class="menu__link no-cursor" onclick="closeMenu()">Contacts</a>
+              <a href="javascript:void(0)" class="menu__link contact-link" onclick="closeMenu()">Contacts</a>
             </li>
           </ul>
         </div>
@@ -365,12 +365,27 @@
           </figure>
         </a>
         <div class="footer__list">
-          <a href="#" class="footer__link">Home</a>
+          <a href="index.html" class="footer__link">Home</a>
           <a class="footer__link no-cursor">About</a>
-          <a href="#features" class="footer__link">Books</a>
-          <a class="footer__link no-cursor">Contact</a>
+          <a href="books.html" class="footer__link">Books</a>
+          <a href="javascript:void(0)" class="footer__link contact-link">Contact</a>
         </div>
         <div class="footer__copyright">Copyright &copy; 2021 Library</div>
+      </div>
+    </div>
+    <div id="contact-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit" class="btn">Submit</button>
+        </form>
       </div>
     </div>
   </footer>

@@ -171,3 +171,36 @@ function getBooks() {
     }, 1000);
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactButtons = document.querySelectorAll(".contact-link, #contact-link");
+  const modal = document.getElementById("contact-modal");
+  const closeButton = document.querySelector(".close-button");
+
+  contactButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+  });
+
+  closeButton.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  const contactForm = document.getElementById("contact-form");
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // In a real application, you would handle the form submission here,
+    // for example, by sending the data to a server.
+    alert("Thank you for your message!");
+    modal.style.display = "none";
+    contactForm.reset();
+  });
+});
